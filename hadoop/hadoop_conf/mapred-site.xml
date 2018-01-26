@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+  <name>mapreduce.framework.name</name>
+  <value>yarn</value>
+</property>
+
+<property>
+  <name>yarn.app.mapreduce.am.resource.mb</name>
+  <value>256</value>
+</property>
+
+<property>
+  <name>mapreduce.map.memory.mb</name>
+  <value>512</value>
+</property>
+
+<property>
+  <name>mapreduce.reduce.memory.mb</name>
+  <value>512</value>
+</property>
+
+<property>
+  <name>mapreduce.map.java.opts</name>
+  <value>-Xmx536m</value>
+</property>
+
+<property>
+  <name>mapreduce.reduce.java.opts</name>
+  <value>-Xmx536m</value>
+</property>
+
+<property>
+  <name>dfs.datanode.hostname</name>
+  <value>##HOSTNAME##</value>
+</property>
+
+<property>
+  <name>mapreduce.task.io.sort.factor</name>
+  <value>10</value>
+</property>
+
+<property>
+  <name>mapreduce.task.io.sort.mb</name>
+  <value>100</value>
+</property>
+
+</configuration>

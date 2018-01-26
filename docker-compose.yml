@@ -1,0 +1,54 @@
+version: '3'
+services:
+  namenode:
+    image: alejandromontero/hadoop:latest
+    hostname: namenodehost
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    entrypoint: ["/opt/hadoop/bootstrap.sh", "namenode"]
+    depends_on:
+        - datanode
+    networks:
+      - hadoop_net
+
+  resourcemanager:
+    image: alejandromontero/hadoop:latest
+    hostname: resourcemanagerhost
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    entrypoint: ["/opt/hadoop/bootstrap.sh", "yarn"]
+    depends_on:
+        - datanode
+    networks:
+      - hadoop_net
+
+  datanode:
+    image: alejandromontero/hadoop:latest
+    hostname: datanode.${HOSTNAME}
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role != manager]
+      restart_policy:
+        condition: on-failure
+    entrypoint: ["/opt/hadoop/bootstrap.sh", "datanode"]
+    networks:
+      - hadoop_net
+
+  #application:
+  #image: alejandromontero/spark_example:latest
+  #deploy:
+  #   placement:
+  #     constraints: [node.role == manager]
+  #  networks:
+  #    - hadoop_net
+networks:
+  hadoop_net:

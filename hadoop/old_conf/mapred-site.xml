@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+  <name>mapreduce.framework.name</name>
+  <value>yarn</value>
+</property>
+
+<property>
+    <name>yarn.app.mapreduce.am.resource.mb</name>
+    <value>256</value>
+</property>
+
+<property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>512</value>
+</property>
+
+<property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>512</value>
+</property>
+
+<property>
+    <name>mapreduce.map.java.opts</name>
+    <value>-Xmx536m</value>
+</property>
+
+<property>
+    <name>mapreduce.reduce.java.opts</name>
+    <value>-Xmx536m</value>
+</property>
+
+<property>
+  <name>mapreduce.task.io.sort.factor</name>
+  <value>10</value>
+</property>
+
+<property>
+  <name>mapreduce.task.io.sort.mb</name>
+  <value>100</value>
+</property>
+
+<!--
+<property>
+  <name>mapred.child.java.opts</name>
+  <value>-Xms512m -Xmx1536m</value>
+  <description>Java opts for the task tracker child processes.
+  The following symbol, if present, will be interpolated: @taskid@ is replaced
+  by current TaskID. Any other occurrences of '@' will go unchanged.
+  For example, to enable verbose gc logging to a file named for the taskid in
+  /tmp and to set the heap maximum to be a gigabyte, pass a 'value' of:
+        -Xmx1024m -verbose:gc -Xloggc:/tmp/@taskid@.gc
+
+  The configuration variable mapred.child.ulimit can be used to control the
+  maximum virtual memory of the child processes.
+  </description>
+</property>
+-->
+
+</configuration>

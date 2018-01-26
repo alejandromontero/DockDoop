@@ -1,0 +1,2 @@
+This is a sample text to test the copy/read from HDFS using a docker container.
+If you are able to read this text, congratulations, HDFS works for you!

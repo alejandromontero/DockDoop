@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<configuration>
+<property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>512</value>
+    <description>Minimum limit of memory to allocate to each container request at the Resource Manager.</description>
+</property>
+
+<property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>896</value>
+    <description>Maximum limit of memory to allocate to each container request at the Resource Manager.</description>
+</property>
+
+<property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>4096</value>
+    <description>Physical memory, in MB, to be made available to running containers</description>
+</property>
+<property>
+    <name>yarn.nodemanager.resource.cpu-vcores</name>
+    <value>1</value>
+    <description>Number of CPU cores that can be allocated for containers.</description>
+</property>
+
+<property>
+   <name>yarn.nodemanager.aux-services</name>
+   <value>mapreduce_shuffle</value>
+ </property>
+
+ <property>
+   <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+   <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+ </property>
+
+ <property>
+   <name>yarn.scheduler.capacity.root.queues</name>
+   <value>default</value>
+ </property>
+ 
+ <property>
+   <name>yarn.scheduler.capacity.root.default.capacity</name>
+   <value>100</value>
+   <description>Default queue target capacity.</description>
+ </property>
+
+ <property>
+   <name>yarn.nodemanager.vmem-check-enabled</name>
+   <value>false</value>
+ </property>
+
+</configuration>

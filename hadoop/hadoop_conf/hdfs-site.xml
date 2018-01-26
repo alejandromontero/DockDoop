@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+<property>
+  <name>dfs.namenode.name.dir</name>
+  <value>/dfs/namenode</value>
+</property>
+
+<property>
+  <name>dfs.datanode.data.dir</name>
+  <value>/dfs/datanode</value>
+</property>
+
+<property>
+  <name>dfs.replication</name>
+  <value>1</value>
+</property>
+
+<property>
+  <name>dfs.datanode.hostname</name>
+  <value>##HOSTNAME##</value>
+</property>
+
+<property>
+  <name>dfs.datanode.address</name>
+  <value>##HOSTNAME##:50010</value>
+</property>
+
+<property>
+  <name>dfs.datanode.ipc.address</name>
+  <value>##HOSTNAME##:50020</value>
+</property>
+
+<property>
+  <name>dfs.namenode.http-address</name>
+  <value>namenodehost:50070</value>
+</property>
+
+<property>
+  <name>dfs.datanode.http.address</name>
+  <value>##HOSTNAME##:50075</value>
+</property>
+
+<property>
+  <name>dfs.namenode.secondary.http-address</name>
+  <value>namenodehost:50090</value>
+</property>
+
+<property>
+  <name>dfs.namenode.backup.address</name>
+  <value>namenodehost:50100</value>
+</property>
+
+</configuration>
