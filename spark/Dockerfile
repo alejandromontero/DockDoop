@@ -2,7 +2,7 @@
 #
 # Inspired by https://github.com/sequenceiq/docker-spark (kudos to him)
 
-FROM alejandromontero/hadoop:latest
+FROM hadoop
 LABEL maintainer="alejandro.montero@bsc.es"
 
 USER root

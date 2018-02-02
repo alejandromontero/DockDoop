@@ -1,8 +1,10 @@
 version: '3'
 services:
-  namenode:
-    image: alejandromontero/hadoop:latest
+  namenodehost:
+    image: hadoop
     hostname: namenodehost
+    volumes:
+      - ./hadoop/hadoop_volume:/hadoop_volume/
     deploy:
       placement:
         constraints: [node.role == manager]
@@ -15,9 +17,11 @@ services:
     networks:
       - hadoop_net
 
-  resourcemanager:
-    image: alejandromontero/hadoop:latest
+  resourcemanagerhost:
+    image: hadoop
     hostname: resourcemanagerhost
+    volumes:
+      - ./hadoop/hadoop_volume:/hadoop_volume/
     deploy:
       placement:
         constraints: [node.role == manager]
@@ -31,8 +35,9 @@ services:
       - hadoop_net
 
   datanode:
-    image: alejandromontero/hadoop:latest
-    hostname: datanode.${HOSTNAME}
+    image: hadoop
+    volumes:
+      - ./hadoop/hadoop_volume:/hadoop_volume/
     deploy:
       mode: global
       placement:
@@ -43,12 +48,14 @@ services:
     networks:
       - hadoop_net
 
-  #application:
-  #image: alejandromontero/spark_example:latest
-  #deploy:
-  #   placement:
-  #     constraints: [node.role == manager]
-  #  networks:
-  #    - hadoop_net
+  application:
+    image: application
+    volumes:
+      - ./application/app_volume:/app/app_volume
+    deploy:
+     placement:
+       constraints: [node.role == manager]
+    networks:
+      - hadoop_net
 networks:
   hadoop_net:

@@ -69,7 +69,7 @@ export HADOOP_CLIENT_OPTS="-Xmx512m $HADOOP_CLIENT_OPTS"
 export HADOOP_SECURE_DN_USER=${HADOOP_SECURE_DN_USER}
 
 # Where log files are stored.  $HADOOP_HOME/logs by default.
-#export HADOOP_LOG_DIR=##HADOOP_LOG_DIR##
+#export HADOOP_LOG_DIR=HADOOP_LOG_DIR
 #export YARN_LOG_DIR=##YARN_LOG_DIR##
 
 # Where log files are stored in the secure data environment.
